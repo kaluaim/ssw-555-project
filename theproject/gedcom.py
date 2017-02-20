@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from prettytable import PrettyTable
 from datetime import datetime
-import US04
+#import US04
 FILE_PATH = './gedcom1.ged'
 INDIs = {}
 FAMs = {}
@@ -55,32 +55,32 @@ def parse(file):
                         INDIs[_individual.indiid] = _individual
                         break
             elif _line_parts[2] == 'FAM':
-                _familie = Familie(_line_parts[1])
+                _family = Family(_line_parts[1])
                 # As long the line don't start with 0, keep reading and
-                # populate the familie
+                # populate the family
                 while True:
                     _line_parts = split_line(lines[current])
                     if _line_parts[0] == '1':
                         if _line_parts[1] == 'HUSB':
-                            _familie.husbandid = _line_parts[2]
+                            _family.husbandid = _line_parts[2]
                         elif _line_parts[1] == 'WIFE':
-                            _familie.wifeid = _line_parts[2]
+                            _family.wifeid = _line_parts[2]
                         elif _line_parts[1] == 'CHIL':
-                            _familie.children.append(_line_parts[2])
+                            _family.children.append(_line_parts[2])
                         elif _line_parts[1] == 'MARR':
                             _date_line_parts = split_line(lines[current+1])
                             if _date_line_parts[1] == 'DATE':
-                                _familie.married = _date_line_parts[2]
+                                _family.married = _date_line_parts[2]
                                 current += 1
                         elif _line_parts[1] == 'DIV':
                             _date_line_parts = split_line(lines[current+1])
                             if _date_line_parts[1] == 'DATE':
-                                _familie.divorced = _date_line_parts[2]
+                                _family.divorced = _date_line_parts[2]
                                 current += 1
                         current += 1
                     else:
-                        # Add _familie to list then break to the next one
-                        FAMs[_familie.famid] = _familie
+                        # Add _family to list then break to the next one
+                        FAMs[_family.famid] = _family
                         break
 
 def split_line(line):
@@ -120,6 +120,7 @@ def print_families():
             v.children])
     print(_families_table)
 
+
 class Individual(object):
     '''Class represent an Individual'''
 
@@ -133,7 +134,7 @@ class Individual(object):
         self.spouse = 'N/A'
 
 
-class Familie(object):
+class Family(object):
     '''Class represent a family'''
 
     def __init__(self, famid):
@@ -143,5 +144,3 @@ class Familie(object):
         self.husbandid = ''
         self.wifeid = ''
         self.children = []
-
-
