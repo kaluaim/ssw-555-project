@@ -126,9 +126,9 @@ class Individual(object):
 
     def __init__(self, indiid):
         self.indiid = indiid
-        self.name = ''
-        self.gender = ''
-        self.birthday = ''
+        self.name = 'N/A'
+        self.gender = 'N/A'
+        self.birthday = 'N/A'
         self.death = 'N/A'
         self.child = 'N/A'
         self.spouse = 'N/A'
@@ -139,8 +139,8 @@ class Family(object):
 
     def __init__(self, famid):
         self.famid = famid
-        self.married = ''
+        self.married = 'N/A'
         self.divorced = 'N/A'
-        self.husbandid = ''
-        self.wifeid = ''
+        self.husbandid = 'N/A'
+        self.wifeid = 'N/A'
         self.children = []

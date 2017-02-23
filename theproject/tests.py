@@ -36,6 +36,7 @@ class TestDates(unittest.TestCase):
         self.assertTrue(util_khalid.is_date_before_current('13 OCT 2016'))
         self.assertFalse(util_khalid.is_date_before_current('13 OCT 2090'))
 
+        self.assertRaises(ValueError, util_khalid.is_date_before_current('132342'))
         try:
             self.assertTrue(util_khalid.is_date_before_current('132342'))
             self.fail('Not a vaild date')
