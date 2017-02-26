@@ -2,7 +2,7 @@ import gedcom
 import US04sourabh
 import util_khalid
 
-FILE_PATH = 'GEDCOM.ged'
+FILE_PATH = 'GEDCOM1.ged'
 
 if __name__ == '__main__':
     gedcom.parse(FILE_PATH)
@@ -19,4 +19,9 @@ if __name__ == '__main__':
     # US07
     print('\n--- US07: Less then 150 years old ---')
     util_khalid.check_individual_age_less_than_150(gedcom.INDIs)
-    #US04sourabh.US4MbD()
+    
+    #US04
+    US0408.US4MbD()
+    #US08
+    US0408.US4bbmp()
+    
