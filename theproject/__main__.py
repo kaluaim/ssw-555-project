@@ -1,8 +1,9 @@
 import gedcom
 import US0408sourabh as US0408
 import util_khalid
+import ga, ga2
 
-FILE_PATH = 'GEDCOM1.ged'
+FILE_PATH = 'GEDCOM.ged'
 
 if __name__ == '__main__':
     gedcom.parse(FILE_PATH)
@@ -16,9 +17,9 @@ if __name__ == '__main__':
     fam_check = util_khalid.check_family_dates_before_current(gedcom.FAMs)
     indi_check = util_khalid.check_individual_dates_before_current(gedcom.INDIs)
     # US02
-
+    ga.US02bbm()
     # US03
-
+    ga2.US03bbm()
     # US04
     US0408.US4MbD()
     # US05

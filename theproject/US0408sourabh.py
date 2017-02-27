@@ -1,41 +1,36 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import gedcom
 divdate=[]
 mardate=[]
 def US4MbD():
-    print("USER STORY 04")
     for k,i in gedcom.FAMs.items():
-        divdate=i.divorced
-        mardate=i.married
-        #print(divdate)
-        if i.divorced != 'N/A':
-            if i.divorced < i.married:
-                print('error'+i.famid)
-            
-            else:
-                print("everything is fine. No divorce before marriage")
-        
-            
-        
+        if i.divorced != 'N/A' and i.married != 'N/A':
+            divdate = datetime.strptime(i.divorced, '%d %b %Y')
+            mardate = datetime.strptime(i.married, '%d %b %Y')
+            if divdate < mardate:
+                print('ERROR: FAMILY: US04: ' + i.famid + ': Divorce ' +
+                    i.divorced + ' after marriage ' + i.married)
+
 mardate=[]
 def US08bbmp():
-    print("USER STORY 8")
-    #import families from gedcom
     for l,m in gedcom.FAMs.items():
-        if m.married:
-            #If the person is married check for bday and id 
+        if m.married != 'N/A':
+            #If the person is married check for bday and id
             for k,i, in gedcom.INDIs.items():
                 id1=i.indiid
-                bday=i.birthday
-            #Identify the child using
+                #Identify the child using
                 if id1 in m.children:
-                    if bday<m.married:
-                        print("error"+'id='+id1)
-                       # print('id='+id1)
-                    else:
-                        print("Everything is OK " + 'id '+id1)
-                        #print('id'+id1)
-                    if m.divorced!='N/A':
-                        if bday<m.married and relativedelta(m.divorced,bday).month+9:
-                            print("error"+'id='+id1)
-                            
+                    bday = datetime.strptime(i.birthday, '%d %b %Y')
+                    p_married = datetime.strptime(m.married, '%d %b %Y')
+                    if bday<p_married:
+                        print('ERROR: INDIVIDUAL: US08: ' + i.indiid +
+                            ': Birthday ' + i.birthday + ' after ' + m.famid +
+                            ' marriage ' + m.married)
+                    if m.divorced != 'N/A':
+                        p_divorced = datetime.strptime(m.divorced, '%d %b %Y')
+                        p_divorced = p_divorced + timedelta(9*365/12)
+                        if bday > p_divorced:
+                            print('ERROR: INDIVIDUAL: US08: ' + i.indiid +
+                                ': Birthday ' + i.birthday +
+                                ' after 9 months of ' + m.famid + ' divorce ' +
+                                m.divorced)
