@@ -11,16 +11,21 @@ if __name__ == '__main__':
     print('\nFamilies')
     gedcom.print_families()
 
+    # Demonstration of user stories
     # US01
-    print('\n--- US01: Dates before current date ---')
     fam_check = util_khalid.check_family_dates_before_current(gedcom.FAMs)
     indi_check = util_khalid.check_individual_dates_before_current(gedcom.INDIs)
+    # US02
+
+    # US03
+
+    # US04
+    US0408.US4MbD()
+    # US05
+
+    # US06
 
     # US07
-    print('\n--- US07: Less then 150 years old ---')
     util_khalid.check_individual_age_less_than_150(gedcom.INDIs)
-
-    #US04
-    US0408.US4MbD()
-    #US08
+    # US08
     US0408.US08bbmp()
