@@ -17,16 +17,17 @@ def US4MbD():
         
             
         
+mardate=[]
 def US08bbmp():
-    print("User story 8")
+    print("USER STORY 8")
     #import families from gedcom
     for l,m in gedcom.FAMs.items():
         if m.married:
-            #If the person is married check for the childs bday and id 
+            #If the person is married check for bday and id 
             for k,i, in gedcom.INDIs.items():
                 id1=i.indiid
                 bday=i.birthday
-            #Store the childs bday and id and compare the bday with the date of this parents marriage date
+            #Identify the child using
                 if id1 in m.children:
                     if bday<m.married:
                         print("error"+'id='+id1)
@@ -34,3 +35,7 @@ def US08bbmp():
                     else:
                         print("Everything is OK " + 'id '+id1)
                         #print('id'+id1)
+                    if m.divorced!='N/A':
+                        if bday<m.married and relativedelta(m.divorced,bday).month+9:
+                            print("error"+'id='+id1)
+                            
