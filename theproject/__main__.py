@@ -30,3 +30,5 @@ if __name__ == '__main__':
     util_khalid.check_individual_age_less_than_150(gedcom.INDIs)
     # US08
     US0408.US08bbmp()
+    
+    US22.US22UniqueIDs()
