@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 import gedcom
 
-#sprint 2
 def US22UniqueIDs():
     print("User Story 22")
     x=0
@@ -12,24 +11,21 @@ def US22UniqueIDs():
            print("IDs are similar")
            x=x+1;
            y=y+1;
-        else:
-            print("Family id Not Similar")
+    print("Family id Not Similar")
 
     for k,i, in gedcom.INDIs.items():
         if i.indiid[x]==i.indiid[y]:
            print("IDs are similar")
            x=x+1;
            y=y+1;
-        else:
-            print("individual id Not Similar")
+         
+    print("individual id Not Similar")
             
             
             
             
- 
-
 def US10Ma14():
-    print("User Story 10")
+    print("User Story 10: Marriage before 14")
     for l,m in gedcom.FAMs.items():
         for k,i in gedcom.INDIs.items():
             if m.married!=None:
@@ -45,11 +41,5 @@ def US10Ma14():
                     diff=((d2-d1).days)
                     #print(diff)
                     if diff<=5110:
-                       print("error "+"Married on "+m.married+" Born on "+i.birthday)
-
-
-
-                   
-        
+                         print("error "+"Married on "+m.married+" Born on "+i.birthday)
                 
-
