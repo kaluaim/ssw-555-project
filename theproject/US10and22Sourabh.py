@@ -27,8 +27,9 @@ def US22UniqueIDs():
             
             
  
+
 def US10Ma14():
-    print("User Story 10: Marriage before 14")
+    print("User Story 10")
     for l,m in gedcom.FAMs.items():
         for k,i in gedcom.INDIs.items():
             if m.married!=None:
@@ -45,8 +46,6 @@ def US10Ma14():
                     #print(diff)
                     if diff<=5110:
                        print("error "+"Married on "+m.married+" Born on "+i.birthday)
-                    else:
-                       print("Marriage is OK")
 
 
 
