@@ -3,10 +3,29 @@ import gedcom
 birtdate=[]
 deaddate=[]
 def US03bbm():
+    print("")
+    print("user story 03 : birth before death")
+    print("")
     for k,i in gedcom.INDIs.items():
-        if i.death != 'N/A' and i.birthday != 'N/A':
+        if i.death != 'N/A' :
             birtdate= datetime.strptime(i.birthday, '%d %b %Y')
             deaddate= datetime.strptime(i.death, '%d %b %Y')
-            if  birtdate > deaddate:
-                print('ERROR: INDIVIDUAL: US03: ' + i.indiid + ': Birthday ' +
-                    i.birthday + ' afrer death: ' + i.death)
+            if  birtdate < deaddate:
+                
+                print("everything is fine. Birth is before death")
+                print("Person name is " + i.name)
+                print("Birthday " + i.birthday)
+                print("death on " + i.death)
+                print("")
+            else:
+                print("error. birth of person after death")
+                print("error for person " + i.name)
+                print("Birthday " + i.birthday)
+                print("death on " + i.death)
+                print("")
+
+        
+
+    
+     
+          
