@@ -36,7 +36,7 @@ def check_individual_age_less_than_150(_individuals):
             death_date = datetime.strptime(v.death, '%d %b %Y')
         _age = calculate_dates_range(birth_date, death_date)
         if _age > 150:
-            print('ERROR: INDIVIDUAL: US08: ' + v.indiid +
+            print('ERROR: INDIVIDUAL: US07: ' + v.indiid +
                 ': More than 150 years old - Birth date ' + v.birthday)
     return True
 
