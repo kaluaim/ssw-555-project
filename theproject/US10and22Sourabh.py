@@ -33,6 +33,8 @@ def US22UniqueIDs():
                     indi_list[y].name)
                 y = y + 1;
             x = x + 1;
+            
+            
 
 def US10Ma14():
     for l,m in gedcom.FAMs.items():
