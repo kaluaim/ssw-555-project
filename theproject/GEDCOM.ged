@@ -20,7 +20,7 @@
 2 DATE 25 APR 1993
 1 FAMC @F1@
 0 @I2@ INDI
-1 NAME Harry /Johnston/
+1 NAME Harry /Tim/
 2 GIVN Harry
 2 SURN Johnston
 2 _MARNM Johnston
@@ -117,6 +117,8 @@
 1 SEX M
 1 BIRT
 2 DATE 8 AUG 1947
+1 DEAT Y
+2 DATE 1 DEC 1955
 1 FAMS @F5@
 0 @I12@ INDI
 1 NAME Henry /Joseph/
@@ -143,7 +145,7 @@
 2 GIVN Anestetia
 2 SURN Clinton
 2 _MARNM Clinton
-1 SEX F
+1 SEX M
 1 BIRT
 2 DATE 19 AUG 2010
 1 DEAT Y
