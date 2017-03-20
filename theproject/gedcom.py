@@ -52,7 +52,13 @@ def parse(file):
                         current += 1
                     else:
                         # Add _individual to list then break to the next one
-                        INDIs[_individual.indiid] = _individual
+                        ## for testing only
+                        if _individual.indiid == '@I11@':
+                            tmp_id = _individual.indiid
+                            _individual.indiid = '@I13@'
+                            INDIs[tmp_id] = _individual
+                        else:
+                            INDIs[_individual.indiid] = _individual
                         break
             elif _line_parts[2] == 'FAM':
                 _family = Family(_line_parts[1])
@@ -80,7 +86,13 @@ def parse(file):
                         current += 1
                     else:
                         # Add _family to list then break to the next one
-                        FAMs[_family.famid] = _family
+                        ## for testing only
+                        if _family.famid == '@F5@':
+                            tmp_id = _family.famid
+                            _family.famid = '@F2@'
+                            FAMs[tmp_id] = _family
+                        else:
+                            FAMs[_family.famid] = _family
                         break
 
 def split_line(line):
