@@ -1,8 +1,7 @@
 from datetime import datetime, timedelta
 import gedcom
 
-from datetime import datetime, timedelta
-import gedcom
+
 # check Fam IDs
 def US22UniqueIDs():
     x=0
