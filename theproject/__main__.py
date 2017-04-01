@@ -2,6 +2,7 @@ import gedcom
 import US0408sourabh, US10and22Sourabh#, US12and36Sourabh
 import util_khalid
 import ga, ga2, ga3, ga4
+import US12andUS36
 
 FILE_PATH = 'GEDCOM.ged'
 
@@ -33,7 +34,7 @@ if __name__ == '__main__':
     # US10
     US10and22Sourabh.US10Ma14()
     # US12
-    #US12and36Sourabh.US12()
+    US12and36Sourabh.US12()
     # US16
     util_khalid.check_family_male_last_names(gedcom.FAMs, gedcom.INDIs)
     # US21
@@ -43,4 +44,4 @@ if __name__ == '__main__':
     # US26
     util_khalid.check_corresponding_entries(gedcom.FAMs, gedcom.INDIs)
     # US36
-    #US12and36Sourabh.US36()
+    US12and36Sourabh.US36()
