@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 from prettytable import PrettyTable
 from datetime import datetime
-#import US04
+import util_khalid
+
 FILE_PATH = './gedcom1.ged'
 INDIs = {}
 FAMs = {}
@@ -112,13 +113,14 @@ def print_individuals():
     '''Print all individuals using PrettyTable'''
 
     _individuals_table = PrettyTable(['ID', 'Name', 'Gender', 'Birthday',
-        'Alive', 'Death', 'Child', 'Spouse'])
+        'Age', 'Alive', 'Death', 'Child', 'Spouse'])
     for k, v in INDIs.items():
+        _age = util_khalid.calculate_age(v.birthday)
         _is_alive = 'True'
         if v.death != 'N/A':
             _is_alive = 'False'
         _individuals_table.add_row([v.indiid, v.name, v.gender, v.birthday,
-            _is_alive, v.death, v.child, v.spouse])
+            _age, _is_alive, v.death, v.child, v.spouse])
     print(_individuals_table)
 
 def print_families():

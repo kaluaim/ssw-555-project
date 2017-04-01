@@ -61,3 +61,43 @@ def is_date_before_current(_date_string):
 def calculate_dates_range(_from, _to):
     '''Takes two dates and return the reange between the two dates as int'''
     return (abs((_from - _to).days))/365
+
+def check_corresponding_entries(_families, _individuals):
+    for k, v in _individuals.items():
+        if v.spouse != 'N/A':
+            found_spouse = False
+            for i, m in _families.items():
+                if m.famid == v.spouse and (v.indiid == m.husbandid or v.indiid == m.wifeid):
+                    found_spouse = True
+                    break
+            if not found_spouse:
+                print('ERROR: INDIVIDUAL: US26: ' + v.indiid + ': Spouse has no corresponding entries in the family records.')
+        if v.child != 'N/A':
+            found_child = False
+            for i, m in _families.items():
+                if m.famid == v.child:
+                    for c in m.children:
+                        if c == v.indiid:
+                            found_spouse = True
+                            break
+                        else:
+                            continue
+                        break
+            if not found_child:
+                print('ERROR: INDIVIDUAL: US26: ' + v.indiid + ': Child has no corresponding entries in the family records.')
+    for k, v in _families.items():
+        if v.husbandid not in _individuals:
+            print('ERROR: FAMILY: US26: ' + v.famid + ': Husband ' + v.husbandid + ' has no corresponding entries for in the individuals records.')
+        if v.wifeid not in _individuals:
+            print('ERROR: FAMILY: US26: ' + v.famid + ': Wife ' + v. wifeid + ' has no corresponding entries for in the individuals records.')
+        for c in v.children:
+            if c not in _individuals:
+                print('ERROR: FAMILY: US26: ' + v.famid + ': Child ' + v. wifeid + ' has no corresponding entries for in the individuals records.')
+
+def calculate_age(birthday):
+        if birthday != 'N/A':
+            _birthday = datetime.strptime(birthday, '%d %b %Y')
+            today = datetime.today()
+            return today.year - _birthday.year - ((today.month, today.day) < (_birthday.month, _birthday.day))
+        else:
+            return 'N/A'
