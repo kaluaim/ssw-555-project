@@ -1,8 +1,8 @@
 import gedcom
-import US0408sourabh as US0408
+import US0408sourabh, US10and22Sourabh#, US12and36Sourabh
 import util_khalid
-import ga, ga2
-import US22Sourabh
+import ga, ga2, ga3, ga4
+import US12andUS36
 
 FILE_PATH = 'GEDCOM.ged'
 
@@ -22,14 +22,26 @@ if __name__ == '__main__':
     # US03
     ga2.US03bbm()
     # US04
-    US0408.US4MbD()
+    US0408sourabh.US4MbD()
     # US05
-
+    ga3.US05bbm()
     # US06
-
+    ga4.US06bbm()
     # US07
     util_khalid.check_individual_age_less_than_150(gedcom.INDIs)
     # US08
-    US0408.US08bbmp()
-    
-   # US22.US22UniqueIDs()  #sprint 2 user story(Still working)
+    US0408sourabh.US08bbmp()
+    # US10
+    US10and22Sourabh.US10Ma14()
+    # US12
+    US12and36Sourabh.US12()
+    # US16
+    util_khalid.check_family_male_last_names(gedcom.FAMs, gedcom.INDIs)
+    # US21
+    util_khalid.check_gender_role(gedcom.FAMs, gedcom.INDIs)
+    # US22
+    US10and22Sourabh.US22UniqueIDs()
+    # US26
+    util_khalid.check_corresponding_entries(gedcom.FAMs, gedcom.INDIs)
+    # US36
+    US12and36Sourabh.US36()

@@ -20,7 +20,12 @@ if __name__ == '__main__':
     ga2.US03bbm()
     ga3.US05bbm()
     ga4.US06bbm()
+<<<<<<< HEAD
     ga5.US30bbm()
     ga6.US31bbm()
     ga7.US29bbm()
     ga8.US35bbm()
+=======
+    US22.US22UniqueIDs()
+    US22.US22UniqueIDs1()
+>>>>>>> 429850f8497ecf1afef863673d5d9894a5185e93

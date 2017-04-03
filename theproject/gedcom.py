@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 from prettytable import PrettyTable
-FILE_PATH = './GEDCOM1.ged'
+from datetime import datetime
+import util_khalid
+
+FILE_PATH = './gedcom1.ged'
 INDIs = {}
 FAMs = {}
 
@@ -50,35 +53,47 @@ def parse(file):
                         current += 1
                     else:
                         # Add _individual to list then break to the next one
-                        INDIs[_individual.indiid] = _individual
+                        ## for testing only
+                        if _individual.indiid == '@I11@':
+                            tmp_id = _individual.indiid
+                            _individual.indiid = '@I13@'
+                            INDIs[tmp_id] = _individual
+                        else:
+                            INDIs[_individual.indiid] = _individual
                         break
             elif _line_parts[2] == 'FAM':
-                _familie = Familie(_line_parts[1])
+                _family = Family(_line_parts[1])
                 # As long the line don't start with 0, keep reading and
-                # populate the familie
+                # populate the family
                 while True:
                     _line_parts = split_line(lines[current])
                     if _line_parts[0] == '1':
                         if _line_parts[1] == 'HUSB':
-                            _familie.husbandid = _line_parts[2]
+                            _family.husbandid = _line_parts[2]
                         elif _line_parts[1] == 'WIFE':
-                            _familie.wifeid = _line_parts[2]
+                            _family.wifeid = _line_parts[2]
                         elif _line_parts[1] == 'CHIL':
-                            _familie.children.append(_line_parts[2])
+                            _family.children.append(_line_parts[2])
                         elif _line_parts[1] == 'MARR':
                             _date_line_parts = split_line(lines[current+1])
                             if _date_line_parts[1] == 'DATE':
-                                _familie.married = _date_line_parts[2]
+                                _family.married = _date_line_parts[2]
                                 current += 1
                         elif _line_parts[1] == 'DIV':
                             _date_line_parts = split_line(lines[current+1])
                             if _date_line_parts[1] == 'DATE':
-                                _familie.divorced = _date_line_parts[2]
+                                _family.divorced = _date_line_parts[2]
                                 current += 1
                         current += 1
                     else:
-                        # Add _familie to list then break to the next one
-                        FAMs[_familie.famid] = _familie
+                        # Add _family to list then break to the next one
+                        ## for testing only
+                        if _family.famid == '@F5@':
+                            tmp_id = _family.famid
+                            _family.famid = '@F2@'
+                            FAMs[tmp_id] = _family
+                        else:
+                            FAMs[_family.famid] = _family
                         break
 
 def split_line(line):
@@ -98,16 +113,17 @@ def print_individuals():
     '''Print all individuals using PrettyTable'''
 
     _individuals_table = PrettyTable(['ID', 'Name', 'Gender', 'Birthday',
-        'Alive', 'Death', 'Child', 'Spouse'])
+        'Age', 'Alive', 'Death', 'Child', 'Spouse'])
     for k, v in INDIs.items():
+        _age = util_khalid.calculate_age(v.birthday)
         _is_alive = 'True'
         if v.death != 'N/A':
             _is_alive = 'False'
         _individuals_table.add_row([v.indiid, v.name, v.gender, v.birthday,
-            _is_alive, v.death, v.child, v.spouse])
+            _age, _is_alive, v.death, v.child, v.spouse])
     print(_individuals_table)
 
-def print_familie():
+def print_families():
     '''Print all families using PrettyTable'''
 
     _families_table = PrettyTable(['ID', 'Married', 'Divorced', 'Husband ID',
@@ -124,21 +140,21 @@ class Individual(object):
 
     def __init__(self, indiid):
         self.indiid = indiid
-        self.name = ''
-        self.gender = ''
-        self.birthday = ''
+        self.name = 'N/A'
+        self.gender = 'N/A'
+        self.birthday = 'N/A'
         self.death = 'N/A'
         self.child = 'N/A'
         self.spouse = 'N/A'
 
 
-class Familie(object):
+class Family(object):
     '''Class represent a family'''
 
     def __init__(self, famid):
         self.famid = famid
-        self.married = ''
+        self.married = 'N/A'
         self.divorced = 'N/A'
-        self.husbandid = ''
-        self.wifeid = ''
+        self.husbandid = 'N/A'
+        self.wifeid = 'N/A'
         self.children = []

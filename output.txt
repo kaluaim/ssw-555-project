@@ -6,36 +6,46 @@ Individuals
 | @I12@ |    Henry /Joseph/   |   M    |  2 OCT 1770 |  True |     N/A     |  @F5@ |  N/A   |
 |  @I9@ |  Britney /Johnston/ |   F    | 10 NOV 1950 | False |  3 DEC 1999 |  N/A  |  @F4@  |
 |  @I6@ |   Danny /Johnston/  |   M    | 18 MAY 1942 |  True |     N/A     |  N/A  |  @F4@  |
-| @I11@ |    David /Joseph/   |   M    |  8 AUG 1947 |  True |     N/A     |  N/A  |  @F5@  |
+| @I13@ |    David /Joseph/   |   M    |  8 AUG 1947 | False |  1 DEC 1955 |  N/A  |  @F5@  |
 |  @I4@ |   Lara /Johnston/   |   F    |  1 SEP 2070 |  True |     N/A     |  N/A  |  @F2@  |
 | @I13@ |   George /Clinton/  |   M    | 15 APR 1919 | False | 12 DEC 1969 |  N/A  |  @F6@  |
 |  @I8@ |   Larry /Johnston/  |   M    |  3 OCT 1966 |  True |     N/A     |  @F3@ |  N/A   |
 |  @I5@ |    Ann /Johnston/   |   F    |  7 OCT 2016 |  True |     N/A     |  @F2@ |  N/A   |
 | @I10@ |  Nichole /Johnston/ |   F    | 10 MAY 1970 |  True |     N/A     |  @F4@ |  N/A   |
 |  @I1@ |    Sam /Johnston/   |   M    | 25 APR 1993 |  True |     N/A     |  @F1@ |  N/A   |
-| @I14@ | Anestetia /Clinton/ |   F    | 19 AUG 2010 | False | 13 JUN 1977 |  N/A  |  @F6@  |
+| @I14@ | Anestetia /Clinton/ |   M    | 19 AUG 2010 | False | 13 JUN 1977 |  N/A  |  @F6@  |
 |  @I3@ |   Mary /Johnston/   |   F    |  1 MAR 1966 | False | 10 FEB 2014 |  N/A  |  @F1@  |
-|  @I2@ |   Harry /Johnston/  |   M    |  5 JUN 1975 |  True |     N/A     |  @F3@ |  @F2@  |
+|  @I2@ |     Harry /Tim/     |   M    |  5 JUN 1975 |  True |     N/A     |  @F3@ |  @F2@  |
 +-------+---------------------+--------+-------------+-------+-------------+-------+--------+
 
 Families
 +------+-------------+------------+------------+------------------+---------+---------------------+------------------+
 |  ID  |   Married   |  Divorced  | Husband ID |   Husband Name   | Wife ID |      Wife Name      |     Children     |
 +------+-------------+------------+------------+------------------+---------+---------------------+------------------+
-| @F2@ | 10 MAR 2014 |    N/A     |    @I2@    | Harry /Johnston/ |   @I4@  |   Lara /Johnston/   |     ['@I5@']     |
+| @F2@ | 10 MAR 2014 |    N/A     |    @I2@    |   Harry /Tim/    |   @I4@  |   Lara /Johnston/   |     ['@I5@']     |
 | @F3@ | 11 JUN 1963 | 8 MAR 1967 |    @I6@    | Danny /Johnston/ |   @I7@  |   Susan /Clinton/   | ['@I2@', '@I8@'] |
 | @F6@ |  7 JUN 2043 |    N/A     |   @I13@    | George /Clinton/ |  @I14@  | Anestetia /Clinton/ |     ['@I7@']     |
-| @F1@ |  9 FEB 1994 |    N/A     |    @I2@    | Harry /Johnston/ |   @I3@  |   Mary /Johnston/   |     ['@I1@']     |
-| @F5@ | 12 JUN 1968 | 8 MAR 1957 |   @I11@    |  David /Joseph/  |   @I7@  |   Susan /Clinton/   |    ['@I12@']     |
+| @F1@ |  9 FEB 1994 |    N/A     |    @I2@    |   Harry /Tim/    |   @I3@  |   Mary /Johnston/   |     ['@I1@']     |
+| @F2@ | 12 JUN 1968 | 8 MAR 1957 |   @I11@    |  David /Joseph/  |   @I7@  |   Susan /Clinton/   |    ['@I12@']     |
 | @F4@ |     N/A     |    N/A     |    @I6@    | Danny /Johnston/ |   @I9@  |  Britney /Johnston/ |    ['@I10@']     |
 +------+-------------+------------+------------+------------------+---------+---------------------+------------------+
 ERROR: FAMILY: US01: @F6@: Marriage 7 JUN 2043 occurs in the future
 ERROR: INDIVIDUAL: US01: @I4@: Birthday 1 SEP 2070 occurs in the future
 ERROR: FAMILY: US02: @F2@: Marriage 10 MAR 2014 after @I4@ Birth 1 SEP 2070
+ERROR: FAMILY: US02: @F2@: Marriage 12 JUN 1968 after @I4@ Birth 1 SEP 2070
+ERROR: FAMILY: US02: @F2@: Marriage 12 JUN 1968 after @I2@ Birth 5 JUN 1975
 ERROR: INDIVIDUAL: US03: @I14@: Birthday 19 AUG 2010 afrer death: 13 JUN 1977
-ERROR: FAMILY: US04: @F5@: Divorce 8 MAR 1957 after marriage 12 JUN 1968
+ERROR: FAMILY: US04: @F2@: Divorce 8 MAR 1957 after marriage 12 JUN 1968
+ERROR: FAMILY: US05: @F6@: Marriage 7 JUN 2043 after @I13@ Death 12 DEC 1969
+ERROR: FAMILY: US05: @F6@: Marriage 7 JUN 2043 after @I14@ Death 13 JUN 1977
 ERROR: INDIVIDUAL: US07: @I12@: More than 150 years old - Birth date 2 OCT 1770
 ERROR: INDIVIDUAL: US08: @I2@: Birthday 5 JUN 1975 after 9 months of @F3@ divorce 8 MAR 1967
 ERROR: INDIVIDUAL: US08: @I7@: Birthday 6 JAN 1941 after @F6@ marriage 7 JUN 2043
 ERROR: INDIVIDUAL: US08: @I1@: Birthday 25 APR 1993 after @F1@ marriage 9 FEB 1994
-ERROR: INDIVIDUAL: US08: @I12@: Birthday 2 OCT 1770 after @F5@ marriage 12 JUN 1968
+ERROR: INDIVIDUAL: US08: @I12@: Birthday 2 OCT 1770 after @F2@ marriage 12 JUN 1968
+ERROR: INDIVIDUAL: US10: @I4@: Birthday 1 SEP 2070 got married before begin 14 at marriage date: 10 MAR 2014
+ERROR: INDIVIDUAL: US16: @I2@: has last name: Tim diffrent than the family last name: Johnston
+ERROR: INDIVIDUAL: US16: @I1@: has last name: Johnston diffrent than the family last name: Tim
+ERROR: FAMILY: US21: @F6@: Wife gender is not F.
+ERROR: FAMILY: US22: @F2@ for husbandid @I2@ IDs are similar to husbandid @I11@
+ERROR: INDIVIDUAL: US22: @I13@ for David /Joseph/ IDs are similar to George /Clinton/
