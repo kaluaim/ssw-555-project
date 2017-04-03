@@ -1,22 +1,22 @@
 Individuals
-+-------+---------------------+--------+-------------+-------+-------------+-------+--------+
-|   ID  |         Name        | Gender |   Birthday  | Alive |    Death    | Child | Spouse |
-+-------+---------------------+--------+-------------+-------+-------------+-------+--------+
-|  @I7@ |   Susan /Clinton/   |   F    |  6 JAN 1941 |  True |     N/A     |  @F6@ |  @F5@  |
-| @I12@ |    Henry /Joseph/   |   M    |  2 OCT 1770 |  True |     N/A     |  @F5@ |  N/A   |
-|  @I9@ |  Britney /Johnston/ |   F    | 10 NOV 1950 | False |  3 DEC 1999 |  N/A  |  @F4@  |
-|  @I6@ |   Danny /Johnston/  |   M    | 18 MAY 1942 |  True |     N/A     |  N/A  |  @F4@  |
-| @I13@ |    David /Joseph/   |   M    |  8 AUG 1947 | False |  1 DEC 1955 |  N/A  |  @F5@  |
-|  @I4@ |   Lara /Johnston/   |   F    |  1 SEP 2070 |  True |     N/A     |  N/A  |  @F2@  |
-| @I13@ |   George /Clinton/  |   M    | 15 APR 1919 | False | 12 DEC 1969 |  N/A  |  @F6@  |
-|  @I8@ |   Larry /Johnston/  |   M    |  3 OCT 1966 |  True |     N/A     |  @F3@ |  N/A   |
-|  @I5@ |    Ann /Johnston/   |   F    |  7 OCT 2016 |  True |     N/A     |  @F2@ |  N/A   |
-| @I10@ |  Nichole /Johnston/ |   F    | 10 MAY 1970 |  True |     N/A     |  @F4@ |  N/A   |
-|  @I1@ |    Sam /Johnston/   |   M    | 25 APR 1993 |  True |     N/A     |  @F1@ |  N/A   |
-| @I14@ | Anestetia /Clinton/ |   M    | 19 AUG 2010 | False | 13 JUN 1977 |  N/A  |  @F6@  |
-|  @I3@ |   Mary /Johnston/   |   F    |  1 MAR 1966 | False | 10 FEB 2014 |  N/A  |  @F1@  |
-|  @I2@ |     Harry /Tim/     |   M    |  5 JUN 1975 |  True |     N/A     |  @F3@ |  @F2@  |
-+-------+---------------------+--------+-------------+-------+-------------+-------+--------+
++-------+---------------------+--------+-------------+-----+-------+-------------+-------+--------+
+|   ID  |         Name        | Gender |   Birthday  | Age | Alive |    Death    | Child | Spouse |
++-------+---------------------+--------+-------------+-----+-------+-------------+-------+--------+
+|  @I7@ |   Susan /Clinton/   |   F    |  6 JAN 1941 |  76 |  True |     N/A     |  @F6@ |  @F5@  |
+| @I12@ |    Henry /Joseph/   |   M    |  2 OCT 1770 | 246 |  True |     N/A     |  @F5@ |  N/A   |
+|  @I9@ |  Britney /Johnston/ |   F    | 10 NOV 1950 |  66 | False |  3 DEC 1999 |  N/A  |  @F4@  |
+|  @I6@ |   Danny /Johnston/  |   M    | 18 MAY 1942 |  74 |  True |     N/A     |  N/A  |  @F4@  |
+| @I13@ |    David /Joseph/   |   M    |  8 AUG 1947 |  69 | False |  1 DEC 1955 |  N/A  |  @F5@  |
+|  @I4@ |   Lara /Johnston/   |   F    |  1 SEP 2070 | -54 |  True |     N/A     |  N/A  |  @F2@  |
+| @I13@ |   George /Clinton/  |   M    | 15 APR 1919 |  97 | False | 12 DEC 1969 |  N/A  |  @F6@  |
+|  @I8@ |   Larry /Johnston/  |   M    |  3 OCT 1966 |  50 |  True |     N/A     |  @F3@ |  N/A   |
+|  @I5@ |    Ann /Johnston/   |   F    |  7 OCT 2016 |  0  |  True |     N/A     |  @F2@ |  N/A   |
+| @I10@ |  Nichole /Johnston/ |   F    | 10 MAY 1970 |  46 |  True |     N/A     |  @F4@ |  N/A   |
+|  @I1@ |    Sam /Johnston/   |   M    | 25 APR 1993 |  23 |  True |     N/A     |  @F1@ |  N/A   |
+| @I14@ | Anestetia /Clinton/ |   M    | 19 AUG 2010 |  6  | False | 13 JUN 1977 |  N/A  |  @F6@  |
+|  @I3@ |   Mary /Johnston/   |   F    |  1 MAR 1966 |  51 | False | 30 MAR 2017 |  N/A  |  @F1@  |
+|  @I2@ |     Harry /Tim/     |   M    |  5 JUN 1975 |  41 |  True |     N/A     |  @F3@ |  @F2@  |
++-------+---------------------+--------+-------------+-----+-------+-------------+-------+--------+
 
 Families
 +------+-------------+------------+------------+------------------+---------+---------------------+------------------+
@@ -27,7 +27,7 @@ Families
 | @F6@ |  7 JUN 2043 |    N/A     |   @I13@    | George /Clinton/ |  @I14@  | Anestetia /Clinton/ |     ['@I7@']     |
 | @F1@ |  9 FEB 1994 |    N/A     |    @I2@    |   Harry /Tim/    |   @I3@  |   Mary /Johnston/   |     ['@I1@']     |
 | @F2@ | 12 JUN 1968 | 8 MAR 1957 |   @I11@    |  David /Joseph/  |   @I7@  |   Susan /Clinton/   |    ['@I12@']     |
-| @F4@ |     N/A     |    N/A     |    @I6@    | Danny /Johnston/ |   @I9@  |  Britney /Johnston/ |    ['@I10@']     |
+| @F4@ |     N/A     |    N/A     |    @I6@    | Danny /Johnston/ |   @I4@  |   Lara /Johnston/   |    ['@I10@']     |
 +------+-------------+------------+------------+------------------+---------+---------------------+------------------+
 ERROR: FAMILY: US01: @F6@: Marriage 7 JUN 2043 occurs in the future
 ERROR: INDIVIDUAL: US01: @I4@: Birthday 1 SEP 2070 occurs in the future
@@ -44,8 +44,32 @@ ERROR: INDIVIDUAL: US08: @I7@: Birthday 6 JAN 1941 after @F6@ marriage 7 JUN 204
 ERROR: INDIVIDUAL: US08: @I1@: Birthday 25 APR 1993 after @F1@ marriage 9 FEB 1994
 ERROR: INDIVIDUAL: US08: @I12@: Birthday 2 OCT 1770 after @F2@ marriage 12 JUN 1968
 ERROR: INDIVIDUAL: US10: @I4@: Birthday 1 SEP 2070 got married before begin 14 at marriage date: 10 MAR 2014
+ERROR: INDIVIDUAL: US12: @I7@: Has over 60 years than his mother [ 69years ].
+ERROR: INDIVIDUAL: US12: @I12@: Has over 80 years than his father [ 176years ].
+ERROR: INDIVIDUAL: US12: @I12@: Has over 60 years than his mother [ 170years ].
+ERROR: INDIVIDUAL: US12: @I10@: Has over 60 years than his mother [ 100years ].
 ERROR: INDIVIDUAL: US16: @I2@: has last name: Tim diffrent than the family last name: Johnston
 ERROR: INDIVIDUAL: US16: @I1@: has last name: Johnston diffrent than the family last name: Tim
 ERROR: FAMILY: US21: @F6@: Wife gender is not F.
 ERROR: FAMILY: US22: @F2@ for husbandid @I2@ IDs are similar to husbandid @I11@
 ERROR: INDIVIDUAL: US22: @I13@ for David /Joseph/ IDs are similar to George /Clinton/
+ERROR: INDIVIDUAL: US26: @I7@: Spouse has no corresponding entries in the family records.
+ERROR: INDIVIDUAL: US26: @I7@: Child has no corresponding entries in the family records.
+ERROR: INDIVIDUAL: US26: @I12@: Child has no corresponding entries in the family records.
+ERROR: INDIVIDUAL: US26: @I9@: Spouse has no corresponding entries in the family records.
+ERROR: INDIVIDUAL: US26: @I13@: Spouse has no corresponding entries in the family records.
+ERROR: INDIVIDUAL: US26: @I8@: Child has no corresponding entries in the family records.
+ERROR: INDIVIDUAL: US26: @I5@: Child has no corresponding entries in the family records.
+ERROR: INDIVIDUAL: US26: @I10@: Child has no corresponding entries in the family records.
+ERROR: INDIVIDUAL: US26: @I1@: Child has no corresponding entries in the family records.
+ERROR: INDIVIDUAL: US26: @I2@: Child has no corresponding entries in the family records.
+INFO: INDIVIDUAL: US30: @I7@: Is alive and married.
+INFO: INDIVIDUAL: US30: @I6@: Is alive and married.
+INFO: INDIVIDUAL: US30: @I4@: Is alive and married.
+INFO: INDIVIDUAL: US30: @I2@: Is alive and married.
+INFO: INDIVIDUAL: US31: @I12@: Is alive and single.
+INFO: INDIVIDUAL: US31: @I8@: Is alive and single.
+INFO: INDIVIDUAL: US31: @I5@: Is alive and single.
+INFO: INDIVIDUAL: US31: @I10@: Is alive and single.
+INFO: INDIVIDUAL: US31: @I1@: Is alive and single.
+ERROR: INDIVIDUAL: US36: @I3@: died in the last 30 days [ 5days ].
