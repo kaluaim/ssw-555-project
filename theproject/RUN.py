@@ -5,8 +5,6 @@ import ga3
 import ga4
 import ga5
 import ga6
-import ga7
-import ga8
 
 FILE_PATH = './Gedcom1.ged'
 if __name__ == '__main__':
