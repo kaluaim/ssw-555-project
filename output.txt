@@ -19,16 +19,16 @@ Individuals
 +-------+---------------------+--------+-------------+-----+-------+-------------+-------+--------+
 
 Families
-+------+-------------+------------+------------+------------------+---------+---------------------+------------------+
-|  ID  |   Married   |  Divorced  | Husband ID |   Husband Name   | Wife ID |      Wife Name      |     Children     |
-+------+-------------+------------+------------+------------------+---------+---------------------+------------------+
-| @F2@ | 10 MAR 2014 |    N/A     |    @I2@    |   Harry /Tim/    |   @I4@  |   Lara /Johnston/   |     ['@I5@']     |
-| @F3@ | 11 JUN 1963 | 8 MAR 1967 |    @I6@    | Danny /Johnston/ |   @I7@  |   Susan /Clinton/   | ['@I2@', '@I8@'] |
-| @F6@ |  7 JUN 2043 |    N/A     |   @I13@    | George /Clinton/ |  @I14@  | Anestetia /Clinton/ |     ['@I7@']     |
-| @F1@ |  9 FEB 1994 |    N/A     |    @I2@    |   Harry /Tim/    |   @I3@  |   Mary /Johnston/   |     ['@I1@']     |
-| @F2@ | 12 JUN 1968 | 8 MAR 1957 |   @I11@    |  David /Joseph/  |   @I7@  |   Susan /Clinton/   |    ['@I12@']     |
-| @F4@ |     N/A     |    N/A     |    @I6@    | Danny /Johnston/ |   @I4@  |   Lara /Johnston/   |    ['@I10@']     |
-+------+-------------+------------+------------+------------------+---------+---------------------+------------------+
++------+-------------+-------------+------------+------------------+---------+---------------------+------------------+
+|  ID  |   Married   |   Divorced  | Husband ID |   Husband Name   | Wife ID |      Wife Name      |     Children     |
++------+-------------+-------------+------------+------------------+---------+---------------------+------------------+
+| @F2@ | 10 MAR 2014 |     N/A     |    @I2@    |   Harry /Tim/    |   @I4@  |   Lara /Johnston/   |     ['@I5@']     |
+| @F3@ | 11 JUN 1963 |  8 MAR 1967 |    @I6@    | Danny /Johnston/ |   @I7@  |   Susan /Clinton/   | ['@I2@', '@I8@'] |
+| @F6@ |  7 JUN 2043 |     N/A     |   @I13@    | George /Clinton/ |  @I14@  | Anestetia /Clinton/ |     ['@I7@']     |
+| @F1@ |  9 FEB 1994 | 31 MAR 2017 |    @I2@    |   Harry /Tim/    |   @I3@  |   Mary /Johnston/   |     ['@I1@']     |
+| @F2@ | 12 JUN 1968 |  8 MAR 1957 |   @I11@    |  David /Joseph/  |   @I7@  |   Susan /Clinton/   |    ['@I12@']     |
+| @F4@ |     N/A     |     N/A     |    @I6@    | Danny /Johnston/ |   @I4@  |   Lara /Johnston/   |    ['@I10@']     |
++------+-------------+-------------+------------+------------------+---------+---------------------+------------------+
 ERROR: FAMILY: US01: @F6@: Marriage 7 JUN 2043 occurs in the future
 ERROR: INDIVIDUAL: US01: @I4@: Birthday 1 SEP 2070 occurs in the future
 ERROR: FAMILY: US02: @F2@: Marriage 10 MAR 2014 after @I4@ Birth 1 SEP 2070
@@ -38,6 +38,7 @@ ERROR: INDIVIDUAL: US03: @I14@: Birthday 19 AUG 2010 afrer death: 13 JUN 1977
 ERROR: FAMILY: US04: @F2@: Divorce 8 MAR 1957 after marriage 12 JUN 1968
 ERROR: FAMILY: US05: @F6@: Marriage 7 JUN 2043 after @I13@ Death 12 DEC 1969
 ERROR: FAMILY: US05: @F6@: Marriage 7 JUN 2043 after @I14@ Death 13 JUN 1977
+ERROR: FAMILY: US06: @F1@: Divorce 31 MAR 2017 after @I3@ Death 30 MAR 2017
 ERROR: INDIVIDUAL: US07: @I12@: More than 150 years old - Birth date 2 OCT 1770
 ERROR: INDIVIDUAL: US08: @I2@: Birthday 5 JUN 1975 after 9 months of @F3@ divorce 8 MAR 1967
 ERROR: INDIVIDUAL: US08: @I7@: Birthday 6 JAN 1941 after @F6@ marriage 7 JUN 2043
@@ -72,4 +73,4 @@ INFO: INDIVIDUAL: US31: @I8@: Is alive and single.
 INFO: INDIVIDUAL: US31: @I5@: Is alive and single.
 INFO: INDIVIDUAL: US31: @I10@: Is alive and single.
 INFO: INDIVIDUAL: US31: @I1@: Is alive and single.
-ERROR: INDIVIDUAL: US36: @I3@: died in the last 30 days [ 5days ].
+ERROR: INDIVIDUAL: US36: @I3@: died in the last 30 days [ 6days ].
