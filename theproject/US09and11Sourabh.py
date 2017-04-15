@@ -4,7 +4,7 @@ import re
 
 def US09():
     print("US09: Birth before death of parents")
-    
+
     for l,m in gedcom.FAMs.items():
         Hid=m.husbandid
         Wid=m.wifeid
@@ -16,7 +16,7 @@ def US09():
                  if child==i.indiid:
                      bday=i.birthday
                      #print(bday)
-                 if Hid==i.indiid: 
+                 if Hid==i.indiid:
                      ddayH=i.death
                      #print(dday)
                  if Wid==i.indiid:
