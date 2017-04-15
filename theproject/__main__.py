@@ -1,7 +1,7 @@
 import gedcom
-import US0408sourabh, US10and22Sourabh, US12andUS36Sou
+import US0408sourabh, US10and22Sourabh, US12andUS36Sou, US09and11Sourabh
 import util_khalid
-import ga, ga2, ga3, ga4, ga5, ga6
+import ga, ga2, ga3, ga4, ga5, ga6, ga7, ga8
 
 FILE_PATH = 'GEDCOM.ged'
 
@@ -30,16 +30,22 @@ if __name__ == '__main__':
     util_khalid.check_individual_age_less_than_150(gedcom.INDIs)
     # US08
     US0408sourabh.US08bbmp()
+    # US09
+    #US09and11Sourabh.US09()
     # US10
     US10and22Sourabh.US10Ma14()
     # US12
     US12andUS36Sou.US12()
+    # US15
+    util_khalid.check_siblings_less_than_15(gedcom.FAMs)
     # US16
     util_khalid.check_family_male_last_names(gedcom.FAMs, gedcom.INDIs)
     # US21
     util_khalid.check_gender_role(gedcom.FAMs, gedcom.INDIs)
     # US22
     US10and22Sourabh.US22UniqueIDs()
+    # US23
+    util_khalid.check_duplicate(gedcom.INDIs)
     # US26
     util_khalid.check_corresponding_entries(gedcom.FAMs, gedcom.INDIs)
     # US30

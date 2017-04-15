@@ -94,6 +94,27 @@ def check_corresponding_entries(_families, _individuals):
             if c not in _individuals:
                 print('ERROR: FAMILY: US26: ' + v.famid + ': Child ' + v. wifeid + ' has no corresponding entries for in the individuals records.')
 
+def check_duplicate(_individuals):
+    x = 0
+    indi_list = []
+
+    for v in _individuals.itervalues():
+        indi_list.append(v)
+
+    while x < len(indi_list):
+        y = x + 1
+        while y < len(indi_list):
+            if indi_list[x].name == indi_list[y].name and indi_list[x].birthday == indi_list[y].birthday :
+                print('ERROR: INDIVIDUAL: US23: ' + indi_list[x].indiid +
+                ' and ' + indi_list[y].indiid + ' has similar name and birth date')
+            y = y + 1;
+        x = x + 1;
+
+def check_siblings_less_than_15(_families):
+    for k, v in _families.items():
+        if len(v.children) > 14:
+            print('ERROR: FAMILY: US15: ' + v.famid + ': Has siblings more more than 14 [' + str(len(v.children)) + ' Siblings]')
+
 def calculate_age(birthday):
         if birthday != 'N/A':
             _birthday = datetime.strptime(birthday, '%d %b %Y')
