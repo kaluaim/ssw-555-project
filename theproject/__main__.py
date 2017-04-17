@@ -31,11 +31,11 @@ if __name__ == '__main__':
     # US08
     US0408sourabh.US08bbmp()
     # US09
-    #US09and11Sourabh.US09()
+    US09and11Sourabh.US09()
     # US10
     US10and22Sourabh.US10Ma14()
     # US11
-    #US09and11Sourabh.US11()
+    US09and11Sourabh.US11()
     # US12
     US12andUS36Sou.US12()
     # US15
@@ -50,9 +50,13 @@ if __name__ == '__main__':
     util_khalid.check_duplicate(gedcom.INDIs)
     # US26
     util_khalid.check_corresponding_entries(gedcom.FAMs, gedcom.INDIs)
+    # US29
+    ga7.US29bbm()
     # US30
     ga5.US30bbm()
     # US31
     ga6.US31bbm()
+    # US35
+    ga8.US35bbm()
     # US36
     US12andUS36Sou.US36()
